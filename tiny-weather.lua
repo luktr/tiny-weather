@@ -1,3 +1,4 @@
+-- Łukasz Trąbiński <lukasz@trabinski.net> 2017 ver 0.2
 bme280.init(3,4)
 alt=0
 
