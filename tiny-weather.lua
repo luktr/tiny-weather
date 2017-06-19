@@ -1,12 +1,17 @@
--- Łukasz Trąbiński <lukasz@trabinski.net> 2017 ver 0.2
+-- Łukasz Trąbiński <lukasz@trabinski.net> 2017 ver 0.3
 bme280.init(3,4)
 alt=0
+tmr.create()
 
 
 srv=net.createServer(net.TCP) 
 srv:listen(80,function(conn) 
     T, P, H, QNH = bme280.read(alt)
-    conn:send(string.format("NodeMCU, ESP-01, tiny-weather, ver 0.2 \n\r"))
+    TI= tmr.now()
+    conn:send(string.format("NodeMCU, ESP-01, tiny-weather, ver 0.3 \n\r"))
+    conn:send(string.format("uptime = "))
+    conn:send(string.format(TI))
+    conn:send(string.format("\n\r"))
     conn:send(string.format("temperature C = "))
     conn:send(string.format(T/100))
     conn:send(string.format("\n\r"))
