@@ -1,3 +1,4 @@
 # tiny-weather
-Simple lua program to read temperature, pressure and humidity from Bosh BME280
+Simple lua program / server to read  temperature, pressure and humidity from Bosh BME280
 sensor connected (in this example to 3,4 pins) to ESP8266 based on NodeMcu firmware.
+Temperature, pressure and humidity are presented as standard WWW service -  (tcp/80) port
