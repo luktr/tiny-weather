@@ -1,3 +1,6 @@
 wifi.setmode(wifi.STATION)
-wifi.sta.config("WIFI-NAME","WIFI-PASSWORD")
+station_cfg={}
+station_cfg.ssid="WIFI SSID"
+station_cfg.pwd="WIFI password"
+wifi.sta.config(station_cfg)
 dofile ("tiny-weather.lua")
